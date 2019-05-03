@@ -16,6 +16,8 @@ provides:
   type: server
   properties:
   - port
+  - credential.accesskey
+  - credential.secretkey
 
 properties:
   credential.accesskey:
@@ -35,3 +37,18 @@ properties:
   pcf_tile_version:
     description: "PCF Tile version"
     default: ""
+  server_cert:
+    description: |
+      PEM-encoded certificate for the Minio server. When set, nodes will communicate with each other over HTTPS rather than HTTP.
+      See 'dns_alias' property below for hostname information.
+    default: ~
+  server_key:
+    description: |
+      PEM-encoded private key for the Minio server.
+    default: ~
+  ca_cert:
+    description: |
+      PEM-encoded certificate used to sign the certificates of the other Minio nodes.
+      Required if `server_cert` is specified and `server_cert` was signed by a third-party CA.
+    default: ~
+  
