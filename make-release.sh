@@ -2,7 +2,7 @@
 
 # Minio Cloud Storage, (C) 2018 Minio, Inc.
 # This tool is used to create Minio BOSH Release.
-# This tool should be run after a new release is 
+# This tool should be run after a new release is
 # available at https://dl.minio.io/server/minio/release/linux-amd64/minio
 # The script needs https://hub.github.com/ to be installed
 
@@ -13,11 +13,11 @@ then
     exit $?
 fi
 
-if [ $gitrepo != "git@github.com:minio/minio-boshrelease.git" ]
-then
-    echo "Current git repo is not git@github.com:minio/minio-boshrelease.git"
-    exit $?
-fi
+# if [ $gitrepo != "git@github.com:BrianRagazzi/minio-boshrelease.git" ]
+# then
+#     echo "Current git repo is not git@github.com:minio/minio-boshrelease.git"
+#     exit $?
+#fi
 
 git diff-index --name-status --exit-code HEAD
 if [ $? -ne 0 ]
